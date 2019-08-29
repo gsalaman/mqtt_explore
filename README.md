@@ -18,4 +18,5 @@ mosquitto -d
 Subscribe to a topic in window #1:  
 mosquitto_sub -d -t testTopic
 
+Then, in window #2, send a message:  
 mosquitto_pub -d -t testTopic -m "Hello World"
