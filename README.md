@@ -1,7 +1,9 @@
 # mqtt_explore
 Random stuff for exploring MQTT and Mosquitto
 ## Useful sites:
-https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/. --- Note, may have malware!!!
+https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/. --- Note, may have malware!!!  
+https://appcodelabs.com/introduction-to-iot-build-an-mqtt-server-using-raspberry-pi. --- Better...has how to install on mac.  
+http://www.steves-internet-guide.com/into-mqtt-python-client/ --- Python info.  
 
 
 ## Install on Pi
