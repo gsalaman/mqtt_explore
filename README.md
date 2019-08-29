@@ -25,4 +25,15 @@ mosquitto_pub -d -t testTopic -m "Hello World"
 # PYTHON!!!
 ## Install
 sudo pip install paho-mqtt  
+## Example scripts
+simple_sub_pub.py - one script that acts both as a subscriber and publisher. 
+
+To see this running with two scripts, open two windows.
+In one, do:  
+python simple_subscriber.py  
+
+After that's running, in a seperate window, do:  
+python simple_publisher.py  
+
+Very important:  the two different clients need different names.
 
