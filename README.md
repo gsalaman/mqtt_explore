@@ -26,8 +26,9 @@ mosquitto_pub -d -t testTopic -m "Hello World"
 ## Install
 sudo pip install paho-mqtt  
 ## Example scripts
-simple_sub_pub.py - one script that acts both as a subscriber and publisher. 
+simple_sub_pub.py - one script that acts both as a subscriber and publisher.  
 
+### Dual scripts
 To see this running with two scripts, open two windows.
 In one, do:  
 python simple_subscriber.py  
@@ -35,5 +36,10 @@ python simple_subscriber.py
 After that's running, in a seperate window, do:  
 python simple_publisher.py  
 
+### matrix example:
+In one window, run:  
+sudo python matrix_sub.py
+
+In the other, you can run pub_red.py, pub_green.py, or pub_blue.py...don't need to be sudo
 Very important:  the two different clients need different names.
 
