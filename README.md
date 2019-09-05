@@ -21,6 +21,13 @@ mosquitto_sub -d -t testTopic
 
 Then, in window #2, send a message:  
 mosquitto_pub -d -t testTopic -m "Hello World"
+
+## Stop Mosquitto service
+```
+sudo service mosquitto stop
+sudo systemctl stop mosquito.service
+```
+
 # PYTHON!!!
 ## Install
 sudo pip install paho-mqtt  
