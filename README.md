@@ -27,7 +27,16 @@ mosquitto_pub -d -t testTopic -m "Hello World"
 sudo service mosquitto stop
 sudo systemctl stop mosquito.service
 ```
-
+## Remove all persistent messages
+- First, stop service as above.
+- then, remove the mosquitto database:  
+```
+sudo rm /var/lib/mosquitto/mosquitto.db
+```
+- Then restart service with either:  
+sudo systemctl start mosquitto.service  
+or  
+sudo service mosquitto start
 # PYTHON!!!
 ## Install
 sudo pip install paho-mqtt  
