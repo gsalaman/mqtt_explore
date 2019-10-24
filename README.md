@@ -37,6 +37,26 @@ sudo rm /var/lib/mosquitto/mosquitto.db
 sudo systemctl start mosquitto.service  
 or  
 sudo service mosquitto start
+
+## Websockets
+If you need your mqtt server to enable websockets, you need to do so via a seperate config file.
+
+First, stop the service (sudo service mosquitto stop).
+Next, create a config file with the following lines:  (I called mine mqtt_glenn.conf)
+```
+port 1883
+listener 9001
+protocol websockets
+```
+
+Then, run the mosquitto broker with: mosquitto -c <config_file>
+So, for me, it was:
+```
+mosquitto -c mqtt_glenn.conf
+```
+
+You should see a line saying "opening ipv4 listen socket on port 1883" as well as one saying "opening websocketes listen socket on port 9001"
+
 # PYTHON!!!
 ## Install
 sudo pip install paho-mqtt  
