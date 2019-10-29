@@ -97,4 +97,24 @@ At this point, you can publish messages to a topic using the publish method:
 ```
 client.publish("my_topic", "my_message")
 ```
+If you want your client to be able to receive messages, you'll use the subscribe functionalitiy...but to do so, you need to create a message callback.  This function will be called whenever your client recieves a message...but remember that your client will only receive messages on topics it's subscribed to.  The callback looks like this:
+```
+# Callback for simple message
+def on_message(client, userdata, message):
+  print("message received: ", str(message.payload.decode("utf-8")))
+  print("message topic=", message.topic)
 
+```
+It needs to have exactly those three parameters...use those params to do whatever processing you want on that message.  
+Okay, so how do we link that in?  Before we connect our client to the broker, we need to tell it which callback function to use to processes subscribed messages...oh, and we need to actually subscribe to those messsages.  Which means our client creation code now looks like this:
+```
+client = mqtt.Client("ExampleClient")
+broker_address="127.0.0.1"
+client.on_message=on_message
+client.connect(broker_address)
+client.loop_start()
+client.subscribe("testTopic")
+```
+Note the "loop_start()" call...this tells python to start listening for any subscribed messsages, and then we subscribe to the message topic (or topics) we are interested in.
+
+And, at this point, whenever we get a subscribed message (anything on "testTopic" for the example above), we'll call the callback, which will print the message.
