@@ -1,8 +1,8 @@
 # mqtt_explore
 Random stuff for exploring MQTT and Mosquitto
 ## Useful sites:
-https://appcodelabs.com/introduction-to-iot-build-an-mqtt-server-using-raspberry-pi. --- Better...has how to install on mac.  
-http://www.steves-internet-guide.com/into-mqtt-python-client/ --- Python info.  
+https://appcodelabs.com/introduction-to-iot-build-an-mqtt-server-using-raspberry-pi. ---Has how to install on mac.  
+http://www.steves-internet-guide.com/into-mqtt-python-client/ --- Python info.  My favorite reference point.
 
 
 ## Install on Pi
@@ -77,4 +77,24 @@ sudo python matrix_sub.py
 
 In the other, you can run pub_red.py, pub_green.py, or pub_blue.py...don't need to be sudo
 Very important:  the two different clients need different names.
+
+## How to use
+Start by including the paho-mqtt library:
+```
+import paho.mqtt.client as mqtt
+```
+
+You then need to make a client.  Pass in a unique ID as it's name...I'm using MyExampleClient below:
+```
+client = mqtt.Client("MyExampleClient")
+```
+Then you need to connect your client to the broker.  Broker can be either an IP address (like below) or a hostname.
+```
+broker_address="127.0.0.1"
+client.connect(broker_address)
+```
+At this point, you can publish messages to a topic using the publish method:
+```
+client.publish("my_topic", "my_message")
+```
 
