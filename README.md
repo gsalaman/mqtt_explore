@@ -105,8 +105,9 @@ def on_message(client, userdata, message):
   print("message topic=", message.topic)
 
 ```
-It needs to have exactly those three parameters...use those params to do whatever processing you want on that message.  
-Okay, so how do we link that in?  Before we connect our client to the broker, we need to tell it which callback function to use to processes subscribed messages...oh, and we need to actually subscribe to those messsages.  Which means our client creation code now looks like this:
+It needs to have exactly those three parameters...use those params to do whatever processing you want on that message.  Usually, message.topic and message.payload will be enough, but if you are curious about the other parameters, go to Steve's page above.
+
+Okay, so how do we link that callback to our client?  Before we connect our client to the broker, we need to tell it which callback function to use to processes subscribed messages...oh, and we need to actually subscribe to those messsages.  Which means our client creation code now looks like this:
 ```
 client = mqtt.Client("ExampleClient")
 broker_address="127.0.0.1"
