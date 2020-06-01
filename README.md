@@ -57,11 +57,13 @@ mosquitto -c mqtt_glenn.conf
 
 You should see a line saying "opening ipv4 listen socket on port 1883" as well as one saying "opening websocketes listen socket on port 9001"
 
+To make this persistent over power-cycles, it needs to go in the "mosquitto.conf" file in /etc/mosquitto/mosquitto.conf.
+
 # PYTHON!!!
 ## Install
 sudo pip install paho-mqtt  
 ## Example scripts
-simple_sub_pub.py - one script that acts both as a subscriber and publisher.  
+simple_su/b_pub.py - one script that acts both as a subscriber and publisher.  
 
 ### Dual scripts
 To see this running with two scripts, open two windows.
