@@ -61,7 +61,8 @@ To make this persistent over power-cycles, it needs to go in the "mosquitto.conf
 
 # PYTHON!!!
 ## Install
-sudo pip install paho-mqtt  
+`sudo pip install paho-mqtt` for python 2  
+`sudo pip3 install paho-mqtt` for python 3
 ## Example scripts
 simple_su/b_pub.py - one script that acts both as a subscriber and publisher.  
 
